@@ -11,9 +11,6 @@ import UIKit
 class PopularCell: UITableViewCell {
 
     @IBOutlet weak var pictureView: UIImageView!
-    @IBOutlet weak var usernameView: UITextView!
-    @IBOutlet weak var profilePictureView: UIImageView!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

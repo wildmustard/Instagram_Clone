@@ -54,10 +54,9 @@ class PhotosViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
 
     
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if let popular = popular{
-            return popular.count
+            return 1
         }
         else{
             return 0
@@ -67,21 +66,48 @@ class PhotosViewController: UIViewController,UITableViewDataSource,UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("popular", forIndexPath: indexPath) as! PopularCell
         
-        let picture = popular[indexPath.row]
-        
-    
+        let picture = popular[indexPath.section]
         let picURL = NSURL(string: picture["images"]!["standard_resolution"]!!["url"] as! String)
-        let profpicURL = NSURL(string: picture["user"]!["profile_picture"] as! String)
         
-        
-        
-        let username = picture["user"]!["username"] as! String
-        print(username)
-        cell.usernameView.text = username
         cell.pictureView.setImageWithURL(picURL!)
-        cell.profilePictureView.setImageWithURL(profpicURL!)
         return cell
     }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if let popular = popular{
+            return popular.count
+        }
+        else{
+            return 0
+        }
+    }
+    
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        headerView.backgroundColor = UIColor(white: 1, alpha: 0.9)
+        
+        let profileView = UIImageView(frame: CGRect(x: 10, y: 2, width: 25, height: 25))
+        profileView.clipsToBounds = true
+        profileView.layer.cornerRadius = 15;
+        profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).CGColor
+        profileView.layer.borderWidth = 1;
+        
+        // Use the section number to get the right URL
+        let picture = popular[section]
+        profileView.setImageWithURL(NSURL(string: picture["user"]!["profile_picture"] as! String)!)
+        
+        headerView.addSubview(profileView)
+        
+        // Add a UILabel for the username here
+        let usernamelabel = UILabel(frame: CGRect(x: 60, y: 2, width: 200, height: 25))
+        usernamelabel.clipsToBounds = true
+        usernamelabel.text = picture["user"]!["username"] as? String
+        headerView.addSubview(usernamelabel)
+        return headerView
+
+    }
+    
 
 }
 
