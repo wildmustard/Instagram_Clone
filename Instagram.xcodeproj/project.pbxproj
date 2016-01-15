@@ -14,6 +14,7 @@
 		B0CD779D1C4860FF00BBD9C6 /* Instagram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0CD779B1C4860FF00BBD9C6 /* Instagram.xcdatamodeld */; };
 		B0CD779F1C4860FF00BBD9C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0CD779E1C4860FF00BBD9C6 /* Assets.xcassets */; };
 		B0CD77A21C4860FF00BBD9C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CD77A01C4860FF00BBD9C6 /* LaunchScreen.storyboard */; };
+		B0CD77AA1C4868EA00BBD9C6 /* PopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD77A91C4868EA00BBD9C6 /* PopularCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B0CD779E1C4860FF00BBD9C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0CD77A11C4860FF00BBD9C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0CD77A31C4860FF00BBD9C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0CD77A91C4868EA00BBD9C6 /* PopularCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +82,9 @@
 		B0CD77931C4860FF00BBD9C6 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				B0CD77AC1C4868F800BBD9C6 /* View Controllers */,
+				B0CD77AB1C4868F200BBD9C6 /* Views */,
 				B0CD77941C4860FF00BBD9C6 /* AppDelegate.swift */,
-				B0CD77961C4860FF00BBD9C6 /* PhotosViewController.swift */,
 				B0CD77981C4860FF00BBD9C6 /* Main.storyboard */,
 				B0CD779E1C4860FF00BBD9C6 /* Assets.xcassets */,
 				B0CD77A01C4860FF00BBD9C6 /* LaunchScreen.storyboard */,
@@ -89,6 +92,22 @@
 				B0CD779B1C4860FF00BBD9C6 /* Instagram.xcdatamodeld */,
 			);
 			path = Instagram;
+			sourceTree = "<group>";
+		};
+		B0CD77AB1C4868F200BBD9C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B0CD77A91C4868EA00BBD9C6 /* PopularCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B0CD77AC1C4868F800BBD9C6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B0CD77961C4860FF00BBD9C6 /* PhotosViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +235,7 @@
 				B0CD77971C4860FF00BBD9C6 /* PhotosViewController.swift in Sources */,
 				B0CD779D1C4860FF00BBD9C6 /* Instagram.xcdatamodeld in Sources */,
 				B0CD77951C4860FF00BBD9C6 /* AppDelegate.swift in Sources */,
+				B0CD77AA1C4868EA00BBD9C6 /* PopularCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
