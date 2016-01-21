@@ -1,4 +1,4 @@
-# Instagram_Clone
+# Minigram
 * For CodePath University Lab Week 1
 
 ### Completed
