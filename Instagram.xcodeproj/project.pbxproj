@@ -15,6 +15,7 @@
 		B0CD779F1C4860FF00BBD9C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0CD779E1C4860FF00BBD9C6 /* Assets.xcassets */; };
 		B0CD77A21C4860FF00BBD9C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0CD77A01C4860FF00BBD9C6 /* LaunchScreen.storyboard */; };
 		B0CD77AA1C4868EA00BBD9C6 /* PopularCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CD77A91C4868EA00BBD9C6 /* PopularCell.swift */; };
+		FA4B3ABE1C519DA100C14A83 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B3ABD1C519DA100C14A83 /* PhotoDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B0CD77A11C4860FF00BBD9C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0CD77A31C4860FF00BBD9C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0CD77A91C4868EA00BBD9C6 /* PopularCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularCell.swift; sourceTree = "<group>"; };
+		FA4B3ABD1C519DA100C14A83 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				B0CD77961C4860FF00BBD9C6 /* PhotosViewController.swift */,
+				FA4B3ABD1C519DA100C14A83 /* PhotoDetailsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0CD77971C4860FF00BBD9C6 /* PhotosViewController.swift in Sources */,
+				FA4B3ABE1C519DA100C14A83 /* PhotoDetailsViewController.swift in Sources */,
 				B0CD779D1C4860FF00BBD9C6 /* Instagram.xcdatamodeld in Sources */,
 				B0CD77951C4860FF00BBD9C6 /* AppDelegate.swift in Sources */,
 				B0CD77AA1C4868EA00BBD9C6 /* PopularCell.swift in Sources */,

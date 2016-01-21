@@ -108,6 +108,24 @@ class PhotosViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated:true)
+    }
+    
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+        var vc = segue.destinationViewController as! PhotoDetailsViewController
+        
+        var indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
+        
+        vc.popular = popular[indexPath!.row]
+        
+        
+    }
+    
 
 }
 
