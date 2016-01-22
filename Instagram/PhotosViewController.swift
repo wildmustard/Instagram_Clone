@@ -9,7 +9,7 @@
 import UIKit
 import AFNetworking
 
-class PhotosViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class PhotosViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, UIScrollViewDelegate {
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -53,6 +53,39 @@ class PhotosViewController: UIViewController,UITableViewDataSource,UITableViewDe
         task.resume()
     }
 
+    var isMoreDataLoading = false;
+    
+    
+    func loadMoreData() {
+        
+        
+        self.isMoreDataLoading = false
+        
+        callApi()
+        
+        
+    }
+    
+    
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        if(!isMoreDataLoading){
+            
+            let scrollViewContentHeight = tableView.contentSize.height;
+            let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+            
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.dragging) {
+                
+                isMoreDataLoading = true
+                
+                // Code to load more results
+                loadMoreData()
+                scrollView.contentOffset.y = 0
+            }
+            
+        }
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if let popular = popular{
