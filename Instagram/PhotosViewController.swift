@@ -14,11 +14,17 @@ class PhotosViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
     @IBOutlet weak var tableView: UITableView!
     var popular : [NSDictionary]!
+    var refreshControl : UIRefreshControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.dataSource = self
         tableView.delegate = self
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
         
         callApi()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,6 +34,23 @@ class PhotosViewController: UIViewController,UITableViewDataSource,UITableViewDe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func onRefresh() {
+        delay(2, closure: {
+            self.callApi()
+            self.refreshControl.endRefreshing()
+        })
+    }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+
     
     func callApi() {
         let clientId = "e05c462ebd86446ea48a5af73769b602"
@@ -51,6 +74,11 @@ class PhotosViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 self.tableView.reloadData()
         });
         task.resume()
+    }
+    
+    func refreshControlAction(refreshControl: UIRefreshControl) {
+        
+        callApi()
     }
 
     var isMoreDataLoading = false;
